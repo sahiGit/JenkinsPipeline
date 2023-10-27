@@ -40,8 +40,10 @@ pipeline {
                 echo 'Deploy stage started'
                 // Deploy using the deployment.yaml file
                 sh 'kubectl apply -f deployment.yaml'
+                sh 'pwd'
                 // Deploy using the service.yaml file
                 sh 'kubectl apply -f service.yaml'
+                sh 'pwd'
                 echo 'Deploy stage completed'
                 }
             }
