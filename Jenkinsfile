@@ -36,12 +36,14 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                dir('App/K8'){
                 echo 'Deploy stage started'
                 // Deploy using the deployment.yaml file
                 sh 'kubectl apply -f deployment.yaml'
                 // Deploy using the service.yaml file
                 sh 'kubectl apply -f service.yaml'
                 echo 'Deploy stage completed'
+                }
             }
         }
     }
