@@ -14,6 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build stage started'
+                sh 'docker --version'
                 // Build the Docker image using the Python file and Dockerfile from GitHub
                 sh 'docker build -t myapp-image .'
                 echo 'Build stage completed'
