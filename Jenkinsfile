@@ -36,7 +36,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                dir('/K8'){
+                dir('K8'){
                 echo 'Deploy stage started'
                 // Deploy using the deployment.yaml file
                 sh 'kubectl apply -f deployment.yaml'
